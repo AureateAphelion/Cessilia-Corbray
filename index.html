@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cessilia Corbray</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Montserrat&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #1b1b1b;
+      color: #e5e5e5;
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 20px;
+    }
+    .ficha-container {
+      max-width: 1000px;
+      margin: auto;
+      background-color: #2b2b2b;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #000;
+      border: 2px solid #444;
+      outline: 2px solid #8c1a1a;
+      outline-offset: 8px;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      align-items: center;
+      background-color: #1b1b1b;
+      background-image: url(https://lossietereinos.com/wp-content/uploads/2014/10/the_vale_of_arryn__by_muffinjh-d6czzh1.jpg);
+      border-bottom: 2px solid #8c1a1a;
+    }
+    .header img {
+      width: 220px;
+      border-radius: 10px;
+      border: 3px solid #8c1a1a;
+      box-shadow: 0 0 10px #000;
+    }
+    .header-info {
+      flex-grow: 1;
+      text-align: center;
+    }
+    .header-info h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 32px;
+      color: #dfdcdc;
+      text-shadow: 0 0 5px #8c1a1a;
+      margin-bottom: 5px;
+    }
+    .header-info h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #b03c3c;
+      text-shadow: 0 0 5px #dfdcdc;
+      margin-bottom: 15px;
+    }
+    .quote {
+      font-style: italic;
+      text-align: center;
+      margin-top: 10px;
+      color: #dfdcdc;
+      text-shadow: 0 0 5px #8c1a1a;
+    }
+    .panel-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #1b1b1b;
+      border-bottom: 1px solid #444;
+    }
+    .panel-buttons button {
+      background-color: #8c1a1a;
+      color: #fff;
+      font-family: 'Cinzel', serif;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-size: 14px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      box-shadow: inset 0 -2px 0 #411;
+    }
+    .panel-buttons button:hover {
+      background-color: #b03c3c;
+    }
+    .panel-section {
+      display: none;
+      padding: 20px;
+      animation: fadeIn 0.5s ease;
+      margin: 15px;
+      border-radius: 8px;
+      background-color: #2b2b2b;
+      box-shadow: 0 0 10px #000 inset;
+      border: 1px solid #444;
+      outline: 1px solid #8c1a1a;
+      outline-offset: -6px;
+    }
+    .panel-section.active {
+      display: block;
+    }
+    .panel-section h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 20px;
+      color: #dfdcdc;
+      text-align: center;
+      margin-bottom: 20px;
+      text-shadow: 0 0 3px #8c1a1a;
+    }
+    .panel-section p, .panel-section ul {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    .panel-section ul {
+      padding-left: 20px;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    @media screen and (max-width: 600px) {
+      .header {
+        flex-direction: column;
+        text-align: center;
+      }
+      .header img {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="ficha-container">
+
+  <!-- Encabezado -->
+  <div class="header">
+    <img src="cessilia.jpeg" alt="Cessilia Corbray">
+    <div class="header-info">
+      <h1>Cessilia Corbray</h1>
+      <h2>Consejera de la Casa Corbray</h2>
+      <div class="quote">“Y sabia debe ser nuestra voluntad, pues incluso la fuerza sin juicio puede volverse contra sí misma.”</div>
+    </div>
+  </div>
+
+  <!-- Botones -->
+  <div class="panel-buttons">
+    <button onclick="showPanel('offrol')">Off-Rol</button>
+    <button onclick="showPanel('onrol')">On-Rol</button>
+    <button onclick="showPanel('historia')">Historia</button>
+    <button onclick="showPanel('apariencia')">Apariencia</button>
+    <button onclick="showPanel('personalidad')">Personalidad</button>
+    <button onclick="showPanel('habilidades')">Habilidades</button>
+    <button onclick="showPanel('inventario')">Inventario</button>
+    <button onclick="showPanel('historial')">Historial</button>
+  </div>
+
+  <!-- Secciones -->
+  <div id="offrol" class="panel-section active">
+    <h3>Información Off-Rol</h3>
+    <ul>
+      <li><b>Usuario:</b> TheFreshMint</li>
+      <li><b>Tipo de cuenta:</b> Primaria</li>
+      <li><b>Ingreso:</b> 10/07/2025</li>
+      <li><b>Creación:</b> 10/07/2025</li>
+      <li><b>Rango:</b> I</li>
+      <li><b>Estadísticas:</b> VIT: 200 | EN: 100 | FUE: 10 | DES: 11 | VEL: 5</li>
+      <li><b>Rasgos:</b> Ágil (+10% DES), Culta, Persuasiva, Orgullosa</li>
+    </ul>
+  </div>
+
+  <div id="onrol" class="panel-section">
+    <h3>Información On-Rol</h3>
+    <ul>
+      <li><b>Región:</b> El Valle</li>
+      <li><b>Edad:</b> 19 años</li>
+      <li><b>Sexo:</b> Femenino</li>
+      <li><b>Casa:</b> Corbray</li>
+      <li><b>Cargo:</b> ✦ Consejera de la Casa | Doncella | Noble</li>
+    </ul>
+  </div>
+
+  <div id="historia" class="panel-section">
+    <h3>Historia</h3>
+    <p>
+      Desde que fue capaz de sostener una pluma, Cessilia Corbray supo que no había margen para el error. Nacida como segunda hija de Lord Arston Corbray y su estricta esposa, la niña no fue criada con ternura ni para el matrimonio, sino para la perfección. A diferencia de Eragon, cuya educación fue marcial y orientada a la herencia, Cessilia fue instruida en letras, cálculo, historia y etiqueta con una exigencia inflexible. Cada palabra mal pronunciada, cada costura desalineada, cada gesto fuera de lugar era corregido con frialdad, a veces con castigo.</p>
+
+<p>Su inteligencia aguda y su capacidad para aprender rápido no le trajeron elogios, sino más presión. “No es suficiente”, solía repetir su madre. La perfección no era una meta, era una expectativa.</p>
+
+<p>Durante su adolescencia, Cessilia se convirtió en una presencia refinada y discreta en la corte de Hogar. Observaba más de lo que hablaba. Escuchaba secretos, analizaba silencios, aprendía a mentir sin mentir. Descubrió que agradar no era lo mismo que confiar, y que la debilidad era un lujo que nadie podía permitirse.</p>
+
+<p><Cuando su padre murió y Eragon heredó el mando a los veinte años, Cessilia no mostró lágrimas. Acompañó el duelo con la compostura que se le había inculcado… pero dentro de sí algo cambió. Ya no bastaba con ser perfecta. Debía tener poder.</p>
+
+<p>Aunque públicamente apoya a su hermano y mantiene una imagen impecable de hermana noble y devota, dentro de sí se esconde un rencor latente. Ella no fue elegida, no fue escuchada. Y ahora observa cada paso de Eragon con un juicio silencioso. Si puede ayudarlo, lo hará. Pero si un día debe superarlo… también lo hará. Por medios sutiles, por alianzas en la sombra, por decisiones que su familia jamás aprobaría.</p>
+
+<p>Cessilia es una Corbray. Y la sangre de los Corbray no solo forja espadas, también afila lenguas y guarda secretos.
+    </p>
+  </div>
+
+  <div id="apariencia" class="panel-section">
+    <h3>Apariencia</h3>
+    <p>La presencia de Cessilia Corbray impone sin necesidad de levantar la voz. Su figura esbelta y erguida revela disciplina y dominio propio, como si cada gesto hubiese sido cuidadosamente pulido con años de exigencia. Viste un vestido de tela oscura y lustrosa , sin adornos innecesarios, sin colores vivos, que acentúa su elegancia sobria y su desapego de las frivolidades cortesanas. En ella, la sobriedad no es humildad: es una forma de poder.</p>
+
+<p>Su rostro, de rasgos finos y simétricos, transmite serenidad e inteligencia. Pómulos marcados, labios suaves pero firmes, y unos ojos oscuros que no observan: analizan. Hay algo inquietante en su mirada, no por lo que dice, sino por lo que elige no mostrar. Cessilia no necesita expresar desdén ni emoción alguna para hacerte sentir examinado. Tiene la clase de belleza que parece distante, como si perteneciera a un retrato antiguo, inalcanzable y eterno.</p>
+
+<p>Su cabello negro, largo y suelto, cae como una cortina de sombras suaves sobre sus hombros. No hay joyas en su cuello, ni en sus dedos: su única ornamentación es la precisión en su porte y el aura de control que la rodea.</p>
+
+<p>Aunque su postura suele ser relajada, con las manos cruzadas frente a sí con una delicadeza estudiada, no hay nada accidental en cómo se presenta. Cada parte de su apariencia transmite lo mismo: refinamiento, contención y una voluntad implacable bajo la superficie.</p>
+  </div>
+
+  <div id="personalidad" class="panel-section">
+    <h3>Personalidad</h3>
+    <p>Cessilia Corbray es el tipo de mujer que jamás alza la voz, porque no lo necesita. Su sola mirada, su manera de medir cada palabra, y su impecable comportamiento dicen más que cualquier discurso. Forjada en la rigidez de una educación sin ternura, aprendió desde niña que el error no era una opción y que la excelencia apenas era el punto de partida. En vez de romperse, se volvió afilada, como la hoja que se templa bajo presión constante.</p>
+
+<p>Como segunda hija de Lord Arston Corbray, no heredó tierras ni mando, pero sí heredó la visión, la sangre fría y el talento para la política. Su madre la preparó para ser perfecta, y ella hizo de esa perfección su escudo. Observadora nata, escucha lo que otros no perciben, analiza silencios, gestos, inconsistencias. Su comprensión de la dinámica social y política la convierte en una aliada invaluable en la corte de Hogar, donde la diplomacia puede valer más que una espada.</p>
+
+<p>Actualmente es la mano derecha de su hermano, Eragon, y aunque en público es su mayor apoyo, su mente sigue siendo una cámara sellada. Nunca ha olvidado que no fue elegida, que su inteligencia fue moldeada para servir, no para liderar. Aun así, cumple su papel con excelencia: ofrece consejos brillantes, negocia alianzas, anticipa riesgos… y, en silencio, evalúa cada uno de los pasos de su hermano.</p>
+
+<p>No busca destruirlo. No todavía. Pero si Eragon flaquea o demuestra que no está a la altura, Cessilia no vacilará en hacer lo necesario para proteger lo que considera suyo por mérito, no por nacimiento. No por odio, sino por convicción.</p>
+  </div>
+
+  <div id="habilidades" class="panel-section">
+    <h3>Habilidades</h3>
+    <ul>
+      <li><b>Habilidad primaria:</b> ✦ [Nombre de la Rama] – Descripción</li>
+      <li><b>Habilidad secundaria:</b> ✦ [Nombre de la Rama] – Descripción</li>
+      <li><b>Habilidades básicas:</b>
+        <ul>
+          <li>[Habilidad 1]</li>
+          <li>[Habilidad 2]</li>
+        </ul>
+      </li>
+      <li><b>Pasivas:</b>
+        <ul>
+          <li>[Nombre de pasiva] – Descripción breve</li>
+        </ul>
+      </li>
+      <li><b>Activas:</b>
+        <ul>
+          <li>[Habilidad activa 1] – Descripción breve</li>
+          <li>[Habilidad activa 2] – Descripción breve</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div id="inventario" class="panel-section">
+    <h3>Inventario</h3>
+    <ul>
+      <li>¿?</li>
+      <li>¿?</li>
+      <li>¿?</li>
+      <li><b>Monedas:</b> [Cantidad]</li>
+    </ul>
+  </div>
+
+  <div id="historial" class="panel-section">
+    <h3>Historial</h3>
+    <ul>
+      <li>[00/00/00] — Evento importante o acción destacada</li>
+      <li>[00/00/00] — Ascenso o cambio de título</li>
+    </ul>
+  </div>
+</div> <!-- cierra .ficha-container -->
+
+<script>
+  function showPanel(id) {
+    document.querySelectorAll('.panel-section').forEach(panel => {
+      panel.classList.remove('active');
+    });
+    document.getElementById(id).classList.add('active');
+  }
+</script>
+</body>
+
+
+  
+  
+  
